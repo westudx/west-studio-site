@@ -1,5 +1,5 @@
 # 1. 找一个预装了 Java 的“基础底盘”
-FROM openjdk:17-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine
 
 # 2. 把我们电脑里的代码文件“复印”到容器里
 COPY HelloWest.java /app/HelloWest.java
