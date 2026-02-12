@@ -1,7 +1,12 @@
 services:
+  # 之前的网页服务
   web:
-    image: nginx:alpine    # 使用轻量级的 Nginx Web 服务器
+    image: nginx:alpine
     ports:
-      - "8080:80"          # 将电脑的 8080 端口映射到容器的 80 端口
+      - "8080:80"
     volumes:
-      - ./index.html:/usr/share/nginx/html/index.html # 【核心】挂载文件
+      - ./index.html:/usr/share/nginx/html/index.html
+
+  # 新增的 Java 后台服务
+  app:
+    build: .  # 告诉 Docker：根据当前的 Dockerfile 自己造一个镜像
